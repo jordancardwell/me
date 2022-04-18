@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: '/me',
-  assetPath:'/me',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  assetPath: process.env.NEXT_PUBLIC_BASE_PATH,
   reactStrictMode: true,
   images: {
     loader: 'akamai',

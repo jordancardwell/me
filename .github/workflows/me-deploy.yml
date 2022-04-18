@@ -28,7 +28,11 @@ jobs:
         cache: 'yarn'
     - run: yarn install --frozen-lockfile
     - run: yarn build
+      env:
+        NEXT_PUBLIC_BASE_PATH: /me
     - run: yarn export
+      env:
+        NEXT_PUBLIC_BASE_PATH: /me
     - run: touch ./out/.nojekyll
     
     - name: Deploy 🚀
