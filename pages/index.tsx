@@ -29,15 +29,18 @@ const Header = styled.div`
   line-height: 19vw;
   user-select: none;
 `;
+// { color }: HeaderTextProps
 const HeaderText = styled.div(
-  ({ color }: HeaderTextProps) => `
+  () =>
+    `
   z-index: 0;
   height: 19vw;
   margin: 0;
   padding: 0;
-  color: ${color}
-`
-);
+  color: inherit;
+  `
+  );
+  // color: ${color}
 
 const GreyScaleImage = styled(Image)`
   position: fixed;
@@ -67,7 +70,17 @@ const Card = styled.div(
   `
 );
 
-const SlideOpen = ({
+const HeaderTextSpring = ({
+  color,
+  children,
+}: PropsWithChildren<HeaderTextProps>) => {
+  const styles = useSpring({
+    zIndex: 1,
+    color,
+  });
+  return <animated.div style={styles}>{children}</animated.div>;
+};
+const SlideOpenSpring = ({
   focused,
   children,
 }: PropsWithChildren<SlideOpenProps>) => {
@@ -95,20 +108,24 @@ const Home: NextPage = () => {
       <Particles />
       {/* <GreyScaleImage src="head.png" width="19vh" height="30vh" /> */}
       <Header onClick={() => setFocusedCard(-1)}>
-        <HeaderText color={randomColor}>JORDAN</HeaderText>
-        <HeaderText color={randomColor}>CARDWELL</HeaderText>
+        <HeaderTextSpring color={randomColor}>
+          <HeaderText>JORDAN</HeaderText>
+        </HeaderTextSpring>
+        <HeaderTextSpring color={randomColor}>
+          <HeaderText>CARDWELL</HeaderText>
+        </HeaderTextSpring>
       </Header>
       <Cover>
         {COLOR_NAMES.map((_, index) => {
           return (
-            <SlideOpen key={index} focused={index === focusedCard}>
+            <SlideOpenSpring key={index} focused={index === focusedCard}>
               <Card
                 index={index}
                 onClick={() =>
                   setFocusedCard(index === focusedCard ? -1 : index)
                 }
               ></Card>
-            </SlideOpen>
+            </SlideOpenSpring>
           );
         })}
       </Cover>

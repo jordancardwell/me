@@ -16,6 +16,7 @@ body {
   --rust: #bb3e03ff;
   --red: #ae2012ff;
   --ruby-red: #9b2226ff;
+  background-color: var(--black);
 }
 
 a {
