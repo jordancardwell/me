@@ -1,6 +1,8 @@
+import { memo } from "react";
 import { default as ReactParticles } from "react-tsparticles";
 import { loadFull } from "tsparticles";
 import type { Container } from "tsparticles-engine";
+import { COLOR_MAP } from "../constants";
 
 const Particles = () => {
   const particlesInit = async (main: any) => {
@@ -19,8 +21,8 @@ const Particles = () => {
   const options = {
     autoPlay: true,
     background: {
-      color: {
-        value: "#000000",
+      color: {        
+        value: COLOR_MAP.black,
       },
       image: "",
       position: "50% 50%",
@@ -391,7 +393,7 @@ const Particles = () => {
         },
         random: false,
         size: false,
-        speed: 5,
+        speed: 0.3,
         spin: {
           acceleration: 0,
           enable: false,
@@ -739,4 +741,4 @@ const Particles = () => {
   );
 };
 
-export default Particles;
+export default memo(Particles);
