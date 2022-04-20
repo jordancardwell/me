@@ -581,7 +581,7 @@ const Particles = () => {
       },
       rate: {
         quantity: 1,
-        delay: 7,
+        delay: 45,
       },
       shape: "square",
       startCount: 0,
@@ -594,7 +594,7 @@ const Particles = () => {
         shape: {
           type: "images",
           options: {
-            images: { src: "head.png", width: 53, height: 70 },
+            images: { src: "head.png", width: 50, height: 70 },
           },
         },
         size: {
@@ -624,8 +624,8 @@ const Particles = () => {
         },
       },
       position: {
-        x: -5,
-        y: 55,
+        x: -1000,
+        y: 20,
       },
     },
   };
@@ -637,106 +637,6 @@ const Particles = () => {
       loaded={particlesLoaded}
       // @ts-ignore-next-line
       options={options}
-      // options={{
-      //   background: {
-      //     color: {
-      //       value: "",
-      //     },
-      //   },
-      //   fpsLimit: 120,
-      //   interactivity: {
-      //     events: {
-      //       onClick: {
-      //         enable: true,
-      //         mode: "push",
-      //       },
-      //       onHover: {
-      //         enable: true,
-      //         mode: "repulse",
-      //       },
-      //       resize: true,
-      //     },
-      //     modes: {
-      //       push: {
-      //         quantity: 4,
-      //       },
-      //       repulse: {
-      //         distance: 200,
-      //         duration: 0.4,
-      //       },
-      //     },
-      //   },
-      //   // manualParticles: [
-      //   //   {
-      //   //     position: {
-      //   //       x: 50,
-      //   //       y: 50,
-      //   //     },
-      //   //     options: {
-      //   //       color: {
-      //   //         value: '#ff7de6'
-      //   //       },
-      //   //       shape: {
-      //   //         type: "circle",
-      //   //       //   options: {
-      //   //       //     images: [{ src: "head.png", width: 53, height: 70 }],
-      //   //       //   },
-      //   //       },
-      //   //       size: {
-      //   //         value: { min: 30, max: 40 },
-      //   //       },
-      //   //     },
-      //   //   },
-      //   // ],
-      //   particles: {
-      //     color: {
-      //       value: "#ffffff",
-      //     },
-      //     links: {
-      //       color: "#999",
-      //       distance: 150,
-      //       enable: true,
-      //       opacity: 0.5,
-      //       width: 1,
-      //     },
-      //     collisions: {
-      //       enable: true,
-      //     },
-      //     move: {
-      //       direction: "none",
-      //       enable: true,
-      //       outModes: {
-      //         default: "bounce",
-      //       },
-      //       random: false,
-      //       speed: 1,
-      //       straight: false,
-      //       spin: {
-      //         enable: false
-      //       },
-      //     },
-      //     number: {
-      //       density: {
-      //         enable: true,
-      //         area: 800,
-      //       },
-      //       value: 10,
-      //     },
-      //     opacity: {
-      //       value: 0.8,
-      //     },
-      //     shape: {
-      //       type: "image",
-      //       options: {
-      //         images: [{ src: "blockhead.png", width: 53, height: 70 }],
-      //       },
-      //     },
-      //     size: {
-      //       value: { min: 3, max: 10 },
-      //     },
-      //   },
-      //   detectRetina: true,
-      // }}
     />
   );
 };

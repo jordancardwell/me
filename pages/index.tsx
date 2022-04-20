@@ -102,7 +102,12 @@ const Home: NextPage = () => {
         {COLOR_NAMES.map((_, index) => {
           return (
             <SlideOpen key={index} focused={index === focusedCard}>
-              <Card index={index} onClick={() => setFocusedCard(index)}></Card>
+              <Card
+                index={index}
+                onClick={() =>
+                  setFocusedCard(index === focusedCard ? -1 : index)
+                }
+              ></Card>
             </SlideOpen>
           );
         })}
